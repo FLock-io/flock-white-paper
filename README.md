@@ -1,1 +1,5 @@
-# flock-white-paper
+# FLock: Federated Machine Learning on Blockchain
+
+ The rapid pace of AI development has highlighted significant challenges in its creation and deployment, primarily due to the centralised control maintained by a few large corporations. Such an approach exacerbates biases within AI models due to a lack of effective governance and oversight. Furthermore, it diminishes public engagement and raises serious data protection concerns. The resulting monopolistic control over data and model outputs also poses a threat to innovation and equitable data usage, as users unknowingly contribute to data sets that serve the interests of these corporations.
+
+ FLock democratises AI development and alignment through on-chain incentive mechanisms. By promoting open source development and data ownership, FLock facilitates an open and collaborative environment where participants can contribute models, data, and computing resources with rewards determined by on-chain consensus. This approach improves transparency and collaboration at scale without introducing biases from centralised entities. Ultimately, FLock enables diverse communities to develop purpose-built AI models, offering bespoke solutions tailored to their specific needs, revolutionising the landscape of AI development and deployment.
