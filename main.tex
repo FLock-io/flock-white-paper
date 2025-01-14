@@ -99,7 +99,157 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 
-\input{macro}
+% \input{macro}---------------===================================
+\usepackage{acro}
+\acsetup{single}
+
+
+
+\DeclareAcronym{LLM}{
+  short = LLM,
+  long  = Large Language Model,
+}
+\newcommand{\LLM}{\ac{LLM}\xspace}
+\newcommand{\LLMs}{\acp{LLM}\xspace}
+
+
+\DeclareAcronym{ZKP}{
+  short = ZKP,
+  long  = Zero-knowledge proof,
+}
+\newcommand{\ZKP}{\ac{ZKP}\xspace}
+
+\DeclareAcronym{FL}{
+  short = FL,
+  long  = Federated Learning,
+}
+\newcommand{\FL}{\ac{FL} Alliance\xspace}
+
+
+% \DeclareAcronym{SNT}{
+%   short = SNT,
+%   long  = Single Node Training,
+% }
+% \newcommand{\SNT}{\ac{SNT}\xspace}
+
+
+\newcommand{\SNT}{{AI Arena}\xspace}
+
+\DeclareAcronym{VRF}{
+  short = VRF,
+  long  = Verifiable Random Function,
+}
+\newcommand{\VRF}{\ac{VRF}\xspace}
+
+
+\DeclareAcronym{DeFi}{
+  short = DeFi,
+  long  = Decentralized Finance,
+}
+\newcommand{\DeFi}{\ac{DeFi}\xspace}
+
+
+
+\DeclareAcronym{PoW}{
+  short = PoW,
+  long  = Proof-of-Work,
+}
+\newcommand{\PoW}{\ac{PoW}\xspace}
+
+\DeclareAcronym{PoS}{
+  short = PoS,
+  long  = Proof-of-Stake,
+}
+\newcommand{\PoS}{\ac{PoS}\xspace}
+
+
+
+
+
+
+\DeclareAcronym{DEX}{
+  short = DEX,
+  long  = Decentralized Exchange,
+}
+\newcommand{\DEX}{\ac{DEX}\xspace}
+\newcommand{\DEXes}{\acp{DEX}\xspace}
+
+\DeclareAcronym{CEX}{
+  short = CEX,
+  long  = Centralized Exchange,
+}
+\newcommand{\CEX}{\ac{CEX}\xspace}
+\newcommand{\CEXes}{\acp{CEX}\xspace}
+
+\DeclareAcronym{EOA}{
+  short = EOA,
+  long  =  Externally-Owned Account,
+}
+\newcommand{\EOA}{\ac{EOA}\xspace}
+\newcommand{\EOAs}{\acp{EOA}\xspace}
+
+
+\DeclareAcronym{NFT}{
+  short = NFT,
+  long  = Non-fungible Token,
+}
+\newcommand{\NFT}{\ac{NFT}\xspace}
+\newcommand{\NFTs}{\acp{NFT}\xspace}
+
+\DeclareAcronym{P2P}{
+  short = P2P,
+  long  = Peer-to-Peer,
+}
+\newcommand{\PtP}{\ac{P2P}\xspace}
+
+
+
+
+\DeclareAcronym{DApp}{
+  short = DApp,
+  long  = Decentralized Application,
+}
+\newcommand{\DApp}{\ac{DApp}\xspace}
+\newcommand{\DApps}{\acp{DApp}\xspace}
+
+\DeclareAcronym{DAO}{
+  short = DAO,
+  long  = Decentralized Autonomous Organisation,
+}
+\newcommand{\DAO}{\ac{DAO}\xspace}
+\newcommand{\DAOs}{\acp{DAO}\xspace}
+
+
+\DeclareAcronym{CeFi}{
+  short = CeFi,
+  long  = Centralized Finance,
+}
+\newcommand{\CeFi}{\ac{CeFi}\xspace}
+
+\DeclareAcronym{BSC}{
+  short = BSC,
+  long  = Binance Smart Chain,
+}
+\newcommand{\BSC}{\ac{KS}\xspace}
+
+
+
+\newcommand{\FML}{\ensuremath{\xspace\texttt{\$FLOCK}}\xspace}
+
+
+
+
+\newcommand{\tx}{\mathsf{tx}\xspace}
+
+
+\newcommand{\totalSupply}{\ensuremath{\xspace\color{brown}\mathsf{X_{totalSupply}}}\xspace}
+\newcommand{\initialEmission}{\ensuremath{\xspace\color{brown}\mathsf{X_{initialEmission} }}\xspace}
+
+\newcommand{\overTimeEmission}{\ensuremath{\xspace\color{brown}\mathsf{X_{overTimeEmission} }}\xspace}
+
+\newcommand{\dailyEmission}{\ensuremath{\xspace\color{brown}\mathsf{X_{dailyEmission} }}\xspace}
+
+% ===============================================================
 
 
 
@@ -131,7 +281,7 @@ Democratising AI through Decentralisation of Data, Computation, and Models
 
 \section{Introduction}
 
-Spanning all fields, collaboration has historically catalysed innovation. This is manifest in the case of the scientific and the digital. By pooling collective expertise, we have forged disruptive solutions at speed. At present, this ideal faces barriers when applied to AI development and deployment: notably, diminished public engagement, pervasive concerns regarding concentrated control, and data protection exerted by a handful of corporations. Meanwhile, blockchain technology~\cite{nakamoto2008bitcoin, wood2014ethereum} has demonstrated its efficacy in multiple areas needing distributed corporations, such as decentralized finance~\cite{werner2022sok}, voting and governance. Research into and deployment of blockchain to transform AI development is now underway. 
+Spanning all fields, collaboration has historically catalysed innovation. This is manifest in the case of the scientific and the digital. By pooling collective expertise, we have forged disruptive solutions at speed. At present, this ideal faces barriers when applied to AI development and deployment: notably, diminished public engagement, pervasive concerns regarding concentrated control, and data protection exerted by a handful of corporations. Meanwhile, blockchain technology~\cite{nakamoto2008bitcoin, wood2014ethereum} has demonstrated its efficacy in multiple areas needing distributed corporations, such as decentralised finance~\cite{werner2022sok}, voting and governance. Research into and deployment of blockchain to transform AI development is now underway. 
 
 FLock, predicated on community involvement and a staunch commitment to data protection, is poised to spearhead the democratisation of AI ecosystem by using blockchain.
 
@@ -308,7 +458,7 @@ There are various categories of participants in FLock.
 
     \item \textbf{Validators:} Validators are responsible for evaluating work done by training nodes, submitting validation scores that influence reward distribution.  They participate by staking tokens, which grants them the opportunity to validate tasks assigned to them, ensuring hardware compatibility and fair task distribution proportional to their stake.  Upon completion of a task, they can withdraw their stake and claim rewards, which are calculated based on their performance and adherence to the expected outcomes. The design ensures that validators are incentivised to provide accurate and honest validations, thereby maintaining the quality and reliability of the network's computational tasks.
     
-    \item \textbf{Delegators:} Delegators contribute to the FLock system by supporting other participants' staking process, enhancing the network's validation capacity without directly participating in the task training or validation process. They provide stake tokens to other participants, thereby increasing the delegatees' potential to be selected for task assignments and influencing the overall reward distribution mechanism. Delegators share in the rewards earned by their associated delegatees, based on predefined algorithms that account for their staked contribution. This role allows individuals to participate in the network's economic and validation activities, leveraging their tokens to support delegatees, without needing the technical capabilities to train or validate tasks themselves.
+    \item \textbf{Delegators:} Delegators contribute to the FLock system by supporting other participants' staking process, enhancing the network's validation capacity without directly participating in the task training or validation process. Delegators share in the rewards earned by their associated delegatees, based on predefined algorithms that account for their staked contribution. Note that training nodes and validators who choose to accept delegation are free to choose a reward share ratio. The higher the ratio, the bigger the reward share their delegators will receive. The role of delegators allows individuals to participate in the network's training, validation and economic activities, leveraging their tokens to support delegatees, without needing the technical capabilities to train or validate tasks themselves.
 
     \item \textbf{FL Clients:} With a FL framework, FL clients will contribute their local data to enhance the model trained for the AI Arena task. In each FL task, participants will be randomly designated as either proposers or voters. Proposers will be tasked with training the model within a FL framework, while voters will assess the training outcomes produced by the proposers. Both proposers and voters will receive rewards or face penalties based on their respective performances. FLock ensures that all participants are motivated to contribute effectively to the overall model improvement.
 
@@ -325,7 +475,7 @@ FLock aims to build a fair and incentive-compatible ecosystem, designed to foste
 \subsection{Token Supply}
 
 \subsubsection{Emission}
-FLock's ecosystem will feature \FML\footnote{\FML stands for ``FLock My Life''.} tokens, set to be distributed to various stakeholders through an initial token emission and a strategically designed reward allocation system over time. Participants will receive rewards in \FML tokens based on their contributions to the system.
+FLock's ecosystem will feature \FML tokens, set to be distributed to various stakeholders through an initial token emission and a strategically designed reward allocation system over time. Participants will receive rewards in \FML tokens based on their contributions to the system. Participants in the FLock system, such as training nodes and validators, are required to contribute computing or storage resources to complete model training and validation in order to receive rewards. This means that the value of the \FML token will, at a minimum, correspond to the value of the resources consumed during these processes.
 
 
 % \subsubsection{Initial Emission}
@@ -406,8 +556,8 @@ FLock's ecosystem will feature \FML\footnote{\FML stands for ``FLock My Life''.}
 
 
 \subsubsection{Burn} 
-Unsuccessful triggered rewards will be burned. This helps maintain the integrity and value of the system by ensuring that only successful actions are rewarded. Users will also pay a fee to access and use the FLock trained models. A portion of the fees collected will also be burned, further controlling the token supply and preventing inflation.
-
+% Unsuccessful triggered rewards will be burned. This helps maintain the integrity and value of the system by ensuring that only successful actions are rewarded. 
+To participate in the FLock system, developers need to pay a registration fee. Similarly, users will also need to pay a fee to access and utilize the FLock-trained models. A portion of the fees collected from both developers and users will be burned, effectively reducing the token supply. This mechanism not only helps maintain a controlled token economy but also serves as a measure to counter inflation, ensuring long-term sustainability of the system’s value.
 
 
 
@@ -424,7 +574,7 @@ Slashing protects the system from immediate threats by disincentivising maliciou
 Active token demand is encouraged through multifaceted approachs as follows, showing the value of circulating tokens within the ecosystem.
 
 \subsubsection{Utility}
-Participants are required to stake \FML to play a role. This reflects their vested interest in the integrity and success of operations. Participants can be also supported by delegators through \FML token delegation. By doing so, the system  boosts the participants' stake within the FLock system and incentivises a symbiotic relationship. Delegators, in turn, earn a share of the rewards earned by their participants, fostering a competitive environment where participants are motivated to offer attractive terms to potential delegators.
+Participants are required to stake \FML to play a role. This reflects their vested interest in the integrity and success of operations. For task creators facing urgent needs to gather top-notch trainers for their model training or operating under tight deadlines, they may opt to pay additional \FML as bounties. These bounties will then be distributed as payments to participants involved in those specific tasks to prioritize the training processes. Participants can be also supported by delegators through \FML token delegation. By doing so, the system  boosts the participants' stake within the FLock system and incentivises a symbiotic relationship. Delegators, in turn, earn a share of the rewards earned by their participants, fostering a competitive environment where participants are motivated to offer attractive terms to potential delegators.
  
      
 \subsubsection{Payment} 
@@ -521,9 +671,9 @@ FLock leverages well-designed incentive mechanisms to reward participants. The d
 
 In our system, verified tasks are granted a share of daily rewards, serving as an incentive to foster the growth of the task creation ecosystem. This reward distribution is intentionally restricted to tasks approved by the DAO to safeguard the protocol from being exploited by low-quality or malicious tasks that could otherwise drain emissions without contributing meaningful value.
 
-Each newly created AI Arena and FL Alliance task has the option to undergo a verification process conducted by the community-led DAO. This process is designed to ensure that tasks meet the necessary standards of quality and alignment with the ecosystem's goals. Once a task successfully passes verification, it becomes eligible for \FML's daily emissions, providing the task creator with additional resources to incentivize participation and collaboration.
+Each newly created AI Arena and FL Alliance task has the option to undergo a verification process conducted by the community-led DAO. This process is designed to ensure that tasks meet the necessary standards of quality and alignment with the ecosystem's goals. Once a task successfully passes verification, it becomes eligible for \FML's daily emissions, providing the task creator with additional resources to incentivise participation and collaboration.
 
-On the other hand, if a task is created permissionlessly without the FLock DAO’s verification, the responsibility falls on the task creator to self-fund the task. This involves using their own \FML to cover the costs associated with reward allocations for various participants. While this route allows for greater flexibility and decentralization in task creation, it also places the financial burden of supporting the task’s ecosystem on the creator. This mechanism is designed to balance innovation with quality control, ensuring that only well-constructed tasks benefit from community-supported rewards while still allowing for creative freedom in the ecosystem.
+On the other hand, if a task is created permissionlessly without the FLock DAO’s verification, the responsibility falls on the task creator to self-fund the task. This involves using their own \FML to cover the costs associated with reward allocations for various participants. While this route allows for greater flexibility and decentralisation in task creation, it also places the financial burden of supporting the task’s ecosystem on the creator. This mechanism is designed to balance innovation with quality control, ensuring that only well-constructed tasks benefit from community-supported rewards while still allowing for creative freedom in the ecosystem.
 
 
 \begin{table*}[htbp]
@@ -554,7 +704,7 @@ In the FLock system, a free rider training node may randomly submit models witho
 poor performance do not receive compensation. 
 
 $\RHD$ FLock AI Arena consensus guarantees that
-honest participants who contribute diligently are appropriately recognized and rewarded, deterring free riders
+honest participants who contribute diligently are appropriately recognised and rewarded, deterring free riders
 from exploiting the process.}\\
 
 \hline
@@ -565,11 +715,11 @@ Lookup Attacks& Training nodes could cheat by learning to predict past validatio
 FL Model Poisoning Attacks &In FL Alliance, an attacker may use biased or corrupted data during the training process to degrade the model's performance.
 & {$\RHD$ 
 % The majority voting system helps to mitigate the impact of  any single malicious participant by aggregating contributions in a way that favours the majority consensus. 
-By aggregating contributions, majority voting minimizes the impact of single malicious participants.
+By aggregating contributions, majority voting minimises the impact of single malicious participants.
 
 $\RHD$
 % The slashing mechanism is designed to penalize malicious clients. This deterrent not only punishes bad actors by reducing or eliminating  their rewards but also discourages future attempts at model poisoning.
-The slashing mechanism penalizes malicious clients, deterring model poisoning by reducing their rewards and discouraging future attacks.
+The slashing mechanism penalises malicious clients, deterring model poisoning by reducing their rewards and discouraging future attacks.
 }\\
 % \hline
 % Backdoor Attacks & Manipulation of model update to exhibit targeted unintended behavior on given input. & \\ \hline
@@ -686,9 +836,6 @@ Assume the amount of daily emitted \FML token is $C_{AI}$. For an \SNT task with
 $$R^{AI}_i = C_{AI} \cdot \frac{S^p_i}{\sum_{k=1}^{M}{S^p_k} }$$
 
  For each \SNT task, rewards are allocated among task creators, training nodes, validators, and delegators. In the initial version of FLock,  if a validator has delegators, $d_1\%$ of their rewards are designated for these delegators. It is important to note that this distribution parameter is flexible and subject to adjustments through the FLock DAO governance.
-
-
-
 
 \subsubsection{Rewards among \FL Tasks} A \FL task should be is derived from a finished \SNT task to be further fine-tuned.  The initiation  of an FL task automatically triggers the creation of a new FL contract. 
 For each active \FL task within the ecosystem, daily rewards are transferred  to the respective FL smart contract, provided the task is still in progress and has not surpassed its maximum allotted lifecycle. This preliminary step ensures that the rewards are earmarked and protected for participants actively engaged in the task. Subsequently, upon meeting the predefined conditions, the FL smart contract autonomously distributes the rewards to the participants, according to their contributions. 
@@ -971,7 +1118,7 @@ In practice, rate limiting is adopted to determine the number of times participa
 % \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10}
 % & & \cellcolor{lightbrown}Node 1 & \cellcolor{lightgray}Node 2 & \cellcolor{lightbrown}Node 1 & \cellcolor{lightgray}Node 2 & \cellcolor{lightbrown}Validator 1 & \cellcolor{lightgray}Validator 2 & \cellcolor{lightbrown}Validator 1 & \cellcolor{lightgray}Validator 2 \\
 % \midrule
-% Day 1 & 200 & \cellcolor{lightbrown}$20 \times 0.7 \times 0.5 = 7$ & \cellcolor{lightgray}$20 \times 0.7 \times 0.5 = 7$ & \cellcolor{lightbrown}$180 \times 0.7 \times 0.5 = 63$ & \cellcolor{lightgray}$180 \times 0.7 \times 0.5 = 63$ & \cellcolor{lightbrown}$20 \times 0.3 \times 0.5 = 3$ & \cellcolor{lightgray}$20 \times 0.3 \times 0.5 = 3$ & \cellcolor{lightbrown}$180 \times 0.3 \times 0.5 = 27$ & \cellcolor{lightgray}$180 \times 0.3 \times 0.5 = 27$ \\
+    % Day 1 & 200 & \cellcolor{lightbrown}$20 \times 0.7 \times 0.5 = 7$ & \cellcolor{lightgray}$20 \times 0.7 \times 0.5 = 7$ & \cellcolor{lightbrown}$180 \times 0.7 \times 0.5 = 63$ & \cellcolor{lightgray}$180 \times 0.7 \times 0.5 = 63$ & \cellcolor{lightbrown}$20 \times 0.3 \times 0.5 = 3$ & \cellcolor{lightgray}$20 \times 0.3 \times 0.5 = 3$ & \cellcolor{lightbrown}$180 \times 0.3 \times 0.5 = 27$ & \cellcolor{lightgray}$180 \times 0.3 \times 0.5 = 27$ \\
 % Day 2 & 200 & \cellcolor{lightbrown}$20 \times 0.7 \times 0.5 = 7$ & \cellcolor{lightgray}$20 \times 0.7 \times 0.5 = 7$ & \cellcolor{lightbrown}$180 \times 0.7 \times 0.5 = 63$ & \cellcolor{lightgray}$180 \times 0.7 \times 0.5 = 63$ & \cellcolor{lightbrown}$20 \times 0.3 \times 0.5 = 3$ & \cellcolor{lightgray}$20 \times 0.3 \times 0.5 = 3$ & \cellcolor{lightbrown}$180 \times 0.3 \times 0.5 = 27$ & \cellcolor{lightgray}$180 \times 0.3 \times 0.5 = 27$ \\
 % Day 3 & 200 & \cellcolor{lightbrown}$20 \times 0.7 \times 0.55 = 7.7$ & \cellcolor{lightgray}$20 \times 0.7 \times 0.45 = 6.3$ & \cellcolor{lightbrown}$180 \times 0.7 \times 0.55 = 69.3$ & \cellcolor{lightgray}$180 \times 0.7 \times 0.45 = 56.7$ & \cellcolor{lightbrown}$20 \times 0.3 \times 0.55 = 3.3$ & \cellcolor{lightgray}$20 \times 0.3 \times 0.45 = 2.7$ & \cellcolor{lightbrown}$180 \times 0.3 \times 0.55 = 29.7$ & \cellcolor{lightgray}$180 \times 0.3 \times 0.45 = 24.3$ \\
 % Day 4 & 200 & \cellcolor{lightbrown}$20 \times 0.7 \times 0.55 = 7.7$ & \cellcolor{lightgray}$20 \times 0.7 \times 0.45 = 6.3$ & \cellcolor{lightbrown}$180 \times 0.7 \times 0.55 = 69.3$ & \cellcolor{lightgray}$180 \times 0.7 \times 0.45 = 56.7$ & \cellcolor{lightbrown}$20 \times 0.3 \times 0.55 = 3.3$ & \cellcolor{lightgray}$20 \times 0.3 \times 0.45 = 2.7$ & \cellcolor{lightbrown}$180 \times 0.3 \times 0.55 = 29.7$ & \cellcolor{lightgray}$180 \times 0.3 \times 0.45 = 24.3$ \\
@@ -1057,9 +1204,14 @@ Each predicted label $\hat{y}_i$ from the model $\theta^{task}_p$ is compared ag
 
 
 
+Within a single AI Arena task, the reward distribution between training nodes and validators is determined based on their relative stake amounts.
 
+We assume there are $n$ submissions $(O_1, \ldots, O_n)$ from $n$ training nodes, and $m$ validators $(V_1, \ldots, V_m)$, each with stakes $(s_1, \ldots, s_m)$.The stakes represent the validators' commitment and trust in the process, influencing the weight of their evaluations in the aggregated score.
 
-We assume there are $n$ submissions $(O_1, \ldots, O_n)$ from $n$ training nodes, and $m$ validators $(V_1, \ldots, V_m)$, each with stakes $(s_1, \ldots, s_m)$. The stakes represent the validators' commitment and trust in the process, influencing the weight of their evaluations in the aggregated score.
+Let the total daily reward allocated to a task be denoted as $R_0$ and the parameter $\gamma$ controls the split rewards, defining the balance between fixed and stake-dependent reward components. Then, the total rewards for training nodes are:
+
+    $$R_0 \cdot \left( \gamma + (1 - 2\gamma) \cdot \frac{\sum_{i=1}^{n} t_i}{\sum_{i=1}^{n} t_i + \sum_{j=1}^{m} s_j} \right)$$
+
 
 
 \begin{itemize}
@@ -1079,45 +1231,139 @@ We assume there are $n$ submissions $(O_1, \ldots, O_n)$ from $n$ training nodes
     
 in which $k$ denotes a given training node's rank amongst its peers in the same task, whereas $q$ represents the common ratio of the geometric series and $m$ is the number of training nodes in a given task.
 
-\item We finally compute the the reward allocated for the training nodes, which is based on the quality of their submission and their stake:
+Participants in the FLock system, such as training nodes and validators, are required to contribute computing or storage resources to complete model training and validation in order to receive rewards. This means that the value of the \FML token will, at a minimum, correspond to the value of the resources consumed during these processes.
 
-$$f_i(g_i, t_i) = \frac{e^{\lambda_t g_{i}} \cdot t_i^{\alpha_t}}{\sum_{k=1}^{n} e^{\lambda_t g_{k}} \cdot t_k^{\alpha_t}}
+\item We finally compute the total rewards allocated for the training nodes as well as their delegators, which is based on the quality of their submission and their total amount of stake:
+
+% $$f_i(g_i, t_i) = \frac{e^{\lambda_t g_{i}} \cdot t_i^{\alpha_t}}{\sum_{k=1}^{n} e^{\lambda_t g_{k}} \cdot t_k^{\alpha_t}}
+% $$
+$$f_i(g_i, t_i) = \frac{g_{i} \cdot t_i^{\alpha_t}}{\sum_{k=1}^{n} g_{k} \cdot t_k^{\alpha_t}}
 $$
-where $\lambda_t$ and $\alpha_t$ are two system parameters, and $t_i$ the stake amount of node $i$.
+where $\alpha_t$ is a system parameter which determines the influence of the stake on the reward distribution, and $t_i$ the total stake amount of from the training node $i$ as well as its respective delegators.
+
+\item Consider $\sigma$ as the reward ratio set by training node $i$  itself which determines the ratio of rewards shared between training node $i$  and its respective delegators. Consider also that a training node $i$' stake in the task is $t_n$ and stakes delegated to training node $i$ is $t_d$, i.e.  $t_i$ = $t_n$ + $t_d$, then the actual reward for training node $i$ is:
+
+$$f_i \cdot \left(\sigma + (1-\sigma) \cdot \frac{t_n}{t_n+t_d}\right)$$
 
     % \item Security and integrity of the evaluation process are paramount. Validators are incentivised to participate honestly through mechanisms such as slashing, where those who behave maliciously or negligently have their stakes reduced.
     % \item The system should also be safeguarded against collusion among validators or attempts to manipulate the evaluation process. Techniques such as advanced cryptography, reputation systems, and random validator selection can enhance trust and decentralisation in the evaluation framework.
 \end{itemize}
 
-
 \begin{table*}[t]
 \centering
-\renewcommand\arraystretch{1.75}
+\renewcommand\arraystretch{1.5}
 \resizebox{2\columnwidth}{!}{%
-\begin{tabular}{lccccccccc}
+\begin{tabular}{lcccccccccc}
 \toprule
-& \multirow{4}{*}{Total} & \multicolumn{6}{c}{\textbf{Rewards for Training Nodes}} & \multicolumn{2}{c}{\textbf{Rewards for Validators}} \\
-\cmidrule(lr){3-8} \cmidrule(lr){9-10}
-& & \multicolumn{3}{c}{Reward A} & \multicolumn{3}{c}{Reward B} & \cellcolor{lightbrown}Reward & \cellcolor{lightgray}Reward \\
-\cmidrule(lr){3-5} \cmidrule(lr){6-8}
-& & \cellcolor{lightbrown}Node 1 & \cellcolor{lightgray}Node 2 & \cellcolor{lightblue}Node 3 & \cellcolor{lightbrown}Node 1 & \cellcolor{lightgray}Node 2 & \cellcolor{lightblue}Node 3 & \cellcolor{lightbrown}Validator 1 & \cellcolor{lightgray}Validator 2 \\
+%========== Header Row 1 ==========
+& \multirow{3}{*}{\textbf{Total}} 
+& \multicolumn{4}{c}{\textbf{Training Nodes}} 
+& \multicolumn{1}{c}{\textbf{Delegators}}
+& \multicolumn{3}{c}{\textbf{Validators}} 
+\\
+\cmidrule(lr){3-6} \cmidrule(lr){7-7} \cmidrule(lr){8-10}
+%========== Header Row 2 ==========
+& 
+& \multicolumn{2}{c}{\cellcolor{lightbrown} Training Node A} 
+& \multicolumn{2}{c}{\cellcolor{lightgray} Training Node B}
+& \multirow{2}{*}{
+  \cellcolor{lightblue}
+  \begin{tabular}{c}
+    \textbf{Delegator A}\\
+    $(\sigma=0.4)$
+  \end{tabular}
+}
+& \cellcolor{lightbrown}Val. A 
+& \cellcolor{lightgray}Val. B 
+& \cellcolor{lightblue}Val. C 
+\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){8-10}
+%========== Header Row 3 ==========
+& 
+& \cellcolor{lightbrown}\textbf{Reward A (10\%)} 
+& \cellcolor{lightbrown}\textbf{Reward B (90\%)} 
+& \cellcolor{lightgray}\textbf{Reward A (10\%)} 
+& \cellcolor{lightgray}\textbf{Reward B (90\%)} 
+& 
+& \cellcolor{lightbrown}{}
+& \cellcolor{lightgray}{}
+& \cellcolor{lightblue}{}
+\\
 \midrule
-Day 1 & 200 & \cellcolor{lightbrown}$20 \times 0.5 \times 0.39 = 3.9$ & \cellcolor{lightgray}$20 \times 0.5 \times 0.33 = 3.3$ & \cellcolor{lightblue}$20 \times 0.5 \times 0.28 = 2.8$ & \cellcolor{lightbrown}$180 \times 0.5 \times 0.39 = 35.1$ & \cellcolor{lightgray}$180 \times 0.5 \times 0.33 = 29.7$ & \cellcolor{lightblue}$180 \times 0.5 \times 0.28 = 25.2$ & \cellcolor{lightbrown}$100 \times 0.4 = 40$ & \cellcolor{lightgray}$100 \times 0.6 = 60$ \\
-Day 2 & 200 & \cellcolor{lightbrown}$20 \times 0.5 \times 0.39 = 3.9$ & \cellcolor{lightgray}$20 \times 0.5 \times 0.33 = 3.3$ & \cellcolor{lightblue}$20 \times 0.5 \times 0.28 = 2.8$ & \cellcolor{lightbrown}$180 \times 0.5 \times 0.39 = 35.1$ & \cellcolor{lightgray}$180 \times 0.5 \times 0.33 = 29.7$ & \cellcolor{lightblue}$180 \times 0.5 \times 0.28 = 25.2$ & \cellcolor{lightbrown}$100 \times 0.4 = 40$ & \cellcolor{lightgray}$100 \times 0.6 = 60$ \\
-Day 3 & 200 & \cellcolor{lightbrown}$20 \times 0.5 \times 0.39 = 3.9$ & \cellcolor{lightgray}$20 \times 0.5 \times 0.33 = 3.3$ & \cellcolor{lightblue}$20 \times 0.5 \times 0.28 = 2.8$ & \cellcolor{lightbrown}$180 \times 0.5 \times 0.39 = 35.1$ & \cellcolor{lightgray}$180 \times 0.5 \times 0.33 = 29.7$ & \cellcolor{lightblue}$180 \times 0.5 \times 0.28 = 25.2$ & \cellcolor{lightbrown}$100 \times 0.45 = 45$ & \cellcolor{lightgray}$100 \times 0.55 = 55$ \\
-Day 4 & 200 & \cellcolor{lightbrown}$20 \times 0.5 \times 0.39 = 3.9$ & \cellcolor{lightgray}$20 \times 0.5 \times 0.33 = 3.3$ & \cellcolor{lightblue}$20 \times 0.5 \times 0.28 = 2.8$ & \cellcolor{lightbrown}$180 \times 0.5 \times 0.39 = 35.1$ & \cellcolor{lightgray}$180 \times 0.5 \times 0.33 = 29.7$ & \cellcolor{lightblue}$180 \times 0.5 \times 0.28 = 25.2$ & \cellcolor{lightbrown}$100 \times 0.45 = 45$ & \cellcolor{lightgray}$100 \times 0.55 = 55$ \\
-Day 5 & 200 & \cellcolor{lightbrown}$20 \times 0.5 \times 0.39 = 3.9$ & \cellcolor{lightgray}$20 \times 0.5 \times 0.33 = 3.3$ & \cellcolor{lightblue}$20 \times 0.5 \times 0.28 = 2.8$ & \cellcolor{lightbrown}$180 \times 0.5 \times 0.39 = 35.1$ & \cellcolor{lightgray}$180 \times 0.5 \times 0.33 = 29.7$ & \cellcolor{lightblue}$180 \times 0.5 \times 0.28 = 25.2$ & \cellcolor{lightbrown}$100 \times 0.5 = 50$ & \cellcolor{lightgray}$100 \times 0.5 = 50$ \\
+%========== Day 1 ==========
+\textbf{Day 1} 
+& 309,157.68 
+& \cellcolor{lightbrown}4,937.1 
+& \cellcolor{lightbrown}44,433.9 
+& \cellcolor{lightgray}5,053.9 
+& \cellcolor{lightgray}45,485.1
+& \cellcolor{lightblue}8,712.6
+& \cellcolor{lightbrown}73,997 
+& \cellcolor{lightgray}87,834 
+& \cellcolor{lightblue}38,703 
+\\
+%========== Day 2 ==========
+\textbf{Day 2} 
+& 309,157.68 
+& \cellcolor{lightbrown}4,937.1 
+& \cellcolor{lightbrown}44,433.9 
+& \cellcolor{lightgray}5,053.9 
+& \cellcolor{lightgray}45,485.1
+& \cellcolor{lightblue}8,712.6
+& \cellcolor{lightbrown}73,997 
+& \cellcolor{lightgray}87,834 
+& \cellcolor{lightblue}38,703 
+\\
+%========== Day 3 ==========
+\textbf{Day 3} 
+& 309,157.68 
+& \cellcolor{lightbrown}4,937.1 
+& \cellcolor{lightbrown}44,433.9 
+& \cellcolor{lightgray}5,053.9 
+& \cellcolor{lightgray}45,485.1
+& \cellcolor{lightblue}8,712.6
+& \cellcolor{lightbrown}73,997 
+& \cellcolor{lightgray}87,834 
+& \cellcolor{lightblue}38,703 
+\\
+%========== Day 4 ==========
+\textbf{Day 4} 
+& 309,157.68 
+& \cellcolor{lightbrown}4,937.1 
+& \cellcolor{lightbrown}44,433.9 
+& \cellcolor{lightgray}5,053.9 
+& \cellcolor{lightgray}45,485.1
+& \cellcolor{lightblue}8,712.6
+& \cellcolor{lightbrown}73,997 
+& \cellcolor{lightgray}87,834 
+& \cellcolor{lightblue}38,703 
+\\
+%========== Day 5 ==========
+\textbf{Day 5} 
+& 309,157.68 
+& \cellcolor{lightbrown}4,937.1 
+& \cellcolor{lightbrown}44,433.9 
+& \cellcolor{lightgray}5,053.9 
+& \cellcolor{lightgray}45,485.1
+& \cellcolor{lightblue}8,712.6
+& \cellcolor{lightbrown}73,997 
+& \cellcolor{lightgray}87,834 
+& \cellcolor{lightblue}38,703 
+\\
 \bottomrule
 \end{tabular}
 }
-\caption{Example: Reward distribution among the participants in one task over five days.}
+\caption{Example: Updated reward distribution for one task (Days 1--5) with 
+2 training nodes (A,B), Delegator A \((\sigma=0.4)\), 
+and 3 validators (A,B,C). \(\delta=0.1\) for Reward\,A (10\%) vs. Reward\,B (90\%).}
 \label{tab:rewards_distribution-table2}
 \end{table*}
 
-
-
-
 \subsection{Reward for Validators in \SNT}\label{sec: reward-for-validators}
+
+Similar to reward calculation for training nodes, the rewards for all validators in the same given AI Arena task is:
+
+    $$R_0 \cdot \left( \gamma + (1 - 2\gamma) \cdot \frac{\sum_{j=1}^{m} s_j}{\sum_{i=1}^{n} t_i + \sum_{j=1}^{m} s_j} \right)$$
 
 For each validator $V_j$, we compute the distances between their score and the final aggregated score:
 
@@ -1196,22 +1442,28 @@ If a validator’s stake in the task is $s_v$, and $s_j$ is its accumulative sta
 
 $$\left(\sum_i{f_i(\Delta_{ji}, s_j)}\right) \cdot \left(\sigma + (1-\sigma) \cdot \frac{s_v}{s_v+S_d}\right)$$
 
-where $\sigma$ is a system parameter.
+where $\sigma$ is a system parameter which controls the rewards split between a given validator and its delegators.
 
 
 \subsection{Delegate Staking}
 Delegators may entrust their tokens to participants of their choosing to receive a passive investment income stream. The receivers can thus amplify their stake, influence, voting power, and rewards. These rewards are shared with the delegators, furthering cooperation. This extends participation to users who have tokens but lack the technical expertise to perform AI model training or validation.
 
+
+
 Specifically, reward for the delegator depends on:
+
 \begin{itemize}
-    \item The quality of the validators selected, as measured by the score variance of the delegated validator.
+    \item The quality of the training nodes or validators selected for delegation.
     \item The amount of stake delegator has delegated.
 \end{itemize}
 
-Formally, reward for delegator can be calculated as:
+Formally, reward for delegator who delegates to a training node can be calculated as:
+    $$f_i \cdot (1-\sigma) \cdot \frac{t_d}{t_n+t_d}$$
+whereas $f_i$ refers to the total reward distributed to the training node $i$ and delegator based on the quality of the training node's submission, $t_d$ is the stake amount from this given delegator,  $t_n$ is the stake amount from training node $i$ and $\sigma$ is the reward share ratio pre-determined by training node $i$ .
 
-    $$\left(\sum_i{f_i(\Delta_{ji}, s_j)}\right) \cdot \sigma \cdot \frac{s_d}{s_v+S_d}$$
-in which $\sum_i{f_i(\Delta_{ji}, s_j)}$ is the Softmax function for validator mentioned above, whereas $s_d$ refers to the stake amount from a given delegator and $s_v$ is the stake amount of the validator the delegator delegated to.
+Similarly, reward for delegator who delegates to a validator can be calculated as:
+    $$\left(\sum_i{f_i(\Delta_{ji}, s_j)}\right) \cdot (1-\sigma) \cdot \frac{s_d}{s_v+s_d}$$
+in which $\sum_i{f_i(\Delta_{ji}, s_j)}$ is the Softmax function for validator mentioned above, whereas $s_d$ refers to the stake amount from a given delegator and $s_v$ is the stake amount from the validator itself.
 
 In the future, FLock delegate staking has the option to be integrated with existing restaking platforms to attract users from a border blockchain community.
 
@@ -1260,20 +1512,57 @@ We consider the rewards for the participants in task 1.
 
 We assume that:
 \begin{itemize}
-    \item Distribution among the participants with a task is: task creator ($0\%$), training nodes ($50\%$), and validators ($50\%$);
-    \item There are three training nodes: Node 1, Node 2 and Node 3, meaning $m$, the number of training nodes in a given task, is 3;
-    \item Nodes 1, 2 and 3 rank first, second and third respectively, and assume their respective rankings remain the same every day and they have the same amount of stake;
-    \item $q$, which is the order of geometry series, is 0.85;
-    \item There are two validators: Validator 1 and Validator 2;
-    \end{itemize}
- Thus, their reward distribution during the five days are:
-    \begin{itemize}
-        \item Day 1: (Node 1: $0.39$, Node 2: $0.33$, Node 3: 0.28), (Validator 1: $0.4$, Validator 2: $0.6$);
-        \item Day 2: (Node 1: $0.39$, Node 2: $0.33$, Node 3: 0.28), (Validator 1: $0.4$, Validator 2: $0.6$);
-        \item Day 3: (Node 1: $0.39$, Node 2: $0.33$, Node 3: 0.28), (Validator 1: $0.45$, Validator 2: $0.55$);
-        \item Day 4: (Node 1: $0.39$, Node 2: $0.33$, Node 3: 0.28), (Validator 1: $0.45$, Validator 2: $0.55$);
-        \item Day 5: (Node 1: $0.39$, Node 2: $0.33$, Node 3: 0.28), (Validator 1: $0.5$, Validator 2: $0.5$);
-    \end{itemize}
+    \item Daily total rewards for all AI Arena tasks for a given day is 309,157.68.
+    \item There are 2 nodes and 3 validators in this given task.
+    \item Nodes A and B stake 3,000 and 3,500 \$FLOCK respectively, while Validators A, B and C stake 3,000, 6,000 and 3,000 respectively. Node A also receives an additional 1,000 FLOCK from its delegators, which brings the $t_i$ (total stake including delegated stake) to be 4,000 for Node A.
+    \item For simplicity, we assume $\gamma$ to be 0 in this example.
+    \item We further assume $\sigma$ to be 0.4, and $\delta$ to be 0.1.
+    \item We consider the scores for Nodes A, B, Validators A, B and C are 0.501435, 0.498565, 0.472768, 0.280226 and 0.247006 respectively.
+\end{itemize}
+
+First, for this given task on Day 1, total rewards for all training nodes are:
+    $$309157.68 \times \frac{6500}{6500 + 12000}=108623.7$$
+
+We can then compute the rewards for Node A and its delegators. Consider $\alpha_t$=1, rewards for Node A (together with delegators) are: 
+    $$\frac{0.501435 \times 4000}{(0.501435 \times 4000) + (0.498565 \times 3500)} \times 108623.7 = 58084$$
+    
+Similarly, for Node B, its rewards together with its delegators are:
+    $$\frac{0.498565 \cdot 3500}{(0.501435 \cdot 4000) + (0.498565 \cdot 3500)} \times 108623.7  = 50539
+$$
+
+Given $\sigma$=0.4, the actual reward for Node A alone is:
+    $$58{,}084 \times \Bigl(0.4 + 0.6 \times \tfrac{3000}{4000}\Bigr) = 49371$$
+As Node B does not have any delegator, so it will retain 100\% of its rewards (i.e. 50,539).
+
+As we assume $\delta$ is 0.1, Reward A is 10\% of the daily rewards for training nodes, while 90\% of the rewards (i.e. Reward B) will be locked until the end of task.  Thus, Reward A and Reward B for Node A on Day 1 are 4,937.1 and 44,433.9 respectively, whereas those for Node B are 5,053.9 and 45,485.1 respectively.
+
+As for validators, for the same task on Day 1, total rewards for all validators are:
+    $$309157.68 \times \frac{12000}{6500 + 12000}= 200534.0$$
+
+Then, if we assume Validator A has a score of 0.472768, the the reward for validator A only is:
+    $$200534.0 \times 0.369 \times \Bigl(0.4 + 0.6 \times \tfrac{3000}{3000 + 0}\Bigr)=73997$$
+
+Similarly, on Day 1, rewards for Valdiator B (score = 0.280226, stake = 6,000) and Validator C (score = 0.247006, stake = 3,000) are 87,834 and 38,703 respectively.
+
+As for Delegator A who delegates 1,000 to Node A, its rewards on Day 1 are calculated as such:
+    $$58084 \times \Bigl(0.6 \times \tfrac{1000}{3000 + 1000}\Bigr)=8712.6$$
+
+% We assume that:
+% \begin{itemize}
+%     \item Distribution among the participants with a task is: task creator ($0\%$), training nodes ($50\%$), and validators ($50\%$);
+%     \item There are three training nodes: Node 1, Node 2 and Node 3, meaning $m$, the number of training nodes in a given task, is 3;
+%     \item Nodes 1, 2 and 3 rank first, second and third respectively, and assume their respective rankings remain the same every day and they have the same amount of stake;
+%     \item $q$, which is the order of geometry series, is 0.85;
+%     \item There are two validators: Validator 1 and Validator 2;
+%     \end{itemize}
+%  Thus, their reward distribution during the five days are:
+%     \begin{itemize}
+%         \item Day 1: (Node 1: $0.39$, Node 2: $0.33$, Node 3: 0.28), (Validator 1: $0.4$, Validator 2: $0.6$);
+%         \item Day 2: (Node 1: $0.39$, Node 2: $0.33$, Node 3: 0.28), (Validator 1: $0.4$, Validator 2: $0.6$);
+%         \item Day 3: (Node 1: $0.39$, Node 2: $0.33$, Node 3: 0.28), (Validator 1: $0.45$, Validator 2: $0.55$);
+%         \item Day 4: (Node 1: $0.39$, Node 2: $0.33$, Node 3: 0.28), (Validator 1: $0.45$, Validator 2: $0.55$);
+%         \item Day 5: (Node 1: $0.39$, Node 2: $0.33$, Node 3: 0.28), (Validator 1: $0.5$, Validator 2: $0.5$);
+%     \end{itemize}
 
 
 The reward distribution among the participants in task 1 during the 5 days is shown in Table~\ref{tab:rewards_distribution-table2}.
@@ -1826,16 +2115,16 @@ FLock token holders are entitled to engage in the system's democratised governan
 
 Users can propose, debate, and vote on various aspects of  development and management, from technical updates and protocol modifications to treasury management and community initiatives. 
 \begin{itemize}
-    \item \textbf{Proposing:} The FLock community actively shapes the protocol's future through a proposal system for all token holders.  Proposals can range from addressing technical issues like bug fixes and algorithm optimization to driving wider community impact, such as allocating treasury funds for research or launching educational programs.
+    \item \textbf{Proposing:} The FLock community actively shapes the protocol's future through a proposal system for all token holders.  Proposals can range from addressing technical issues like bug fixes and algorithm optimisation to driving wider community impact, such as allocating treasury funds for research or launching educational programs.
     \item \textbf{Debating:} Proposed ideas are then open for discussion and critique within the FLock community. Token holders can engage in forums, discussions, and possibly even direct communication with developers to analyze the merits and potential consequences of each proposal. This debate fosters transparency and ensures that decisions are well-informed and considered from multiple perspectives.
-    \item \textbf{Voting:} Once a proposal has been sufficiently debated, token holders cast their votes to decide its fate. The voting system likely incorporates mechanisms like weighted voting (where larger holdings carry more weight) or quadratic voting (which incentivizes thoughtful contributions and discourages manipulation) to ensure fair representation.
+    \item \textbf{Voting:} Once a proposal has been sufficiently debated, token holders cast their votes to decide its fate. The voting system likely incorporates mechanisms like weighted voting (where larger holdings carry more weight) or quadratic voting (which incentivises thoughtful contributions and discourages manipulation) to ensure fair representation.
 \end{itemize}
-The statement emphasizes that FLock's governance model allows for
-continuous adaptation as the platform and the decentralized AI landscape evolve:
+The statement emphasises that FLock's governance model allows for
+continuous adaptation as the platform and the decentralised AI landscape evolve:
 
 \begin{itemize}
     \item \textbf{Policy Adaptation:} As new challenges and opportunities arise, token holders can use the voting system to modify existing policies or create entirely new ones. This ensures that FLock remains relevant and responsive to the changing needs of its community and the broader AI ecosystem.
-    \item \textbf{Feature Implementation:} Proposals for implementing new features can be put forward and voted on, allowing the FLock platform to grow and evolve based on user demand and feedback. This fosters innovation and keeps FLock at the forefront of decentralized AI development.
+    \item \textbf{Feature Implementation:} Proposals for implementing new features can be put forward and voted on, allowing the FLock platform to grow and evolve based on user demand and feedback. This fosters innovation and keeps FLock at the forefront of decentralised AI development.
     \item \textbf{Responding to Challenges:} The ability to quickly adapt policies and implement changes allows FLock to effectively respond to unforeseen challenges like security vulnerabilities, regulatory shifts, or market fluctuations.
 \end{itemize}
 
