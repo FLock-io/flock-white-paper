@@ -550,25 +550,8 @@ FLock's ecosystem will feature \FML tokens, set to be distributed to various sta
 % %     \end{itemize}
 % % \end{itemize}
 
-
-
-
-
-
-\subsubsection{Burn} 
-% Unsuccessful triggered rewards will be burned. This helps maintain the integrity and value of the system by ensuring that only successful actions are rewarded. 
-To participate in the FLock system, developers need to pay a registration fee. Similarly, users will also need to pay a fee to access and utilize the FLock-trained models. A portion of the fees collected from both developers and users will be burned, effectively reducing the token supply. This mechanism not only helps maintain a controlled token economy but also serves as a measure to counter inflation, ensuring long-term sustainability of the system’s value.
-
-
-
 \subsubsection{Slash} \label{sec: slash}
-FLock robust mechanisms ensure the integrity and reliability of the system by penalising participants that engage in malicious activities. If a participant is identified as acting against the system's rules or attempting to undermine the system through malicious actions, they are subjected to ``slashing''. Slashed tokens will be rewarded to the honest participants or burned. 
-% This punitive measure involves the reduction or complete removal of their staked assets within the blockchain framework, serving as a powerful deterrent against potential disrupters.
-Slashing protects the system from immediate threats by disincentivising malicious actors and reinforces a culture of trust and cooperation among participants. 
-
-
-
-
+FLock robust mechanisms ensure the integrity and reliability of the system by penalising participants that engage in malicious activities. In AI Arena, if a participant is identified as acting against the system's rules or attempting to undermine the system through malicious actions, they are subjected to ``slashing''. Slashed tokens will be rewarded to the honest participants. Slashing protects the system from immediate threats by disincentivising malicious actors and reinforces a culture of trust and cooperation among participants. 
 
 \subsection{Token Demand}
 Active token demand is encouraged through multifaceted approachs as follows, showing the value of circulating tokens within the ecosystem.
@@ -576,9 +559,8 @@ Active token demand is encouraged through multifaceted approachs as follows, sho
 \subsubsection{Utility}
 Participants are required to stake \FML to play a role. This reflects their vested interest in the integrity and success of operations. For task creators facing urgent needs to gather top-notch trainers for their model training or operating under tight deadlines, they may opt to pay additional \FML as bounties. These bounties will then be distributed as payments to participants involved in those specific tasks to prioritize the training processes. Participants can be also supported by delegators through \FML token delegation. By doing so, the system  boosts the participants' stake within the FLock system and incentivises a symbiotic relationship. Delegators, in turn, earn a share of the rewards earned by their participants, fostering a competitive environment where participants are motivated to offer attractive terms to potential delegators.
  
-     
 \subsubsection{Payment} 
-Community members are able to access and utilise winning models which are trained and fine-tuned in AI Arena and FL Alliance, and hosted on AI Marketplace. End users enjoy rate limit in their access to such models based on their stake amount, beyond which they will be charged in \FML as payment. On the other hand, model hosts need to stake \FML in order to host winning models. They are able to customise whether and how to charge end users of these models. At inception phase, model hosts will receive part of the daily emission in order to incentivise their participation. Yet such incentives are expected to diminish over time. Overall, such design creates a sustainable and competitive environment in which demand and supply for cutting-edge models are dynamically balanced, fostering innovation and ensuring that the latest advancements continue to meet the evolving needs of the market. The payment mechanism also creates a non-negligible financial barrier in access to our models, thus helps mitigate potential DoS attacks from malicious participants. What is also note-worthy is that part of such payments will be burnt. This deflationary mechanism reduces the total token supply, potentially increasing the value of remaining tokens while ensuring that only serious participants engage in the network.
+Community members are able to access and utilise winning models which are trained and fine-tuned in AI Arena and FL Alliance, and hosted on AI Marketplace. End users enjoy rate limit in their access to such models based on their stake amount, beyond which they will be charged in \FML as payment. On the other hand, model hosts need to stake \FML in order to host winning models. They are able to customise whether and how to charge end users of these models. At inception phase, model hosts will receive part of the daily emission in order to incentivise their participation. Yet such incentives are expected to diminish over time. Overall, such design creates a sustainable and competitive environment in which demand and supply for cutting-edge models are dynamically balanced, fostering innovation and ensuring that the latest advancements continue to meet the evolving needs of the market. The payment mechanism also creates a non-negligible financial barrier in access to our models, thus helps mitigate potential DoS attacks from malicious participants.
 
 \subsubsection{Governance Participation} Holding \FML tokens grants members the power to influence the network's future through participation in the Decentralised Autonomous Organisation~(DAO) governance. This not only decentralises decision-making but also adds a layer of utility and value to the tokens, as they become a key to shaping the ecosystem's development.
 
@@ -1248,6 +1230,233 @@ $$f_i \cdot \left(\sigma + (1-\sigma) \cdot \frac{t_n}{t_n+t_d}\right)$$
     % \item Security and integrity of the evaluation process are paramount. Validators are incentivised to participate honestly through mechanisms such as slashing, where those who behave maliciously or negligently have their stakes reduced.
     % \item The system should also be safeguarded against collusion among validators or attempts to manipulate the evaluation process. Techniques such as advanced cryptography, reputation systems, and random validator selection can enhance trust and decentralisation in the evaluation framework.
 \end{itemize}
+
+
+% \begin{table*}[t]
+% \centering
+% \renewcommand\arraystretch{1.75}
+% \resizebox{2\columnwidth}{!}{%
+% \begin{tabular}{lccccccccc}
+% \toprule
+% & \multirow{4}{*}{Total} & \multicolumn{6}{c}{\textbf{Rewards for Training Nodes}} & \multicolumn{2}{c}{\textbf{Rewards for Validators}} \\
+% \cmidrule(lr){3-8} \cmidrule(lr){9-10}
+% & & \multicolumn{3}{c}{Reward A} & \multicolumn{3}{c}{Reward B} & \cellcolor{lightbrown}Reward & \cellcolor{lightgray}Reward \\
+% \cmidrule(lr){3-5} \cmidrule(lr){6-8}
+% & & \cellcolor{lightbrown}Node 1 & \cellcolor{lightgray}Node 2 & \cellcolor{lightblue}Node 3 & \cellcolor{lightbrown}Node 1 & \cellcolor{lightgray}Node 2 & \cellcolor{lightblue}Node 3 & \cellcolor{lightbrown}Validator 1 & \cellcolor{lightgray}Validator 2 \\
+% \midrule
+% Day 1 & 200 & \cellcolor{lightbrown}$20 \times 0.5 \times 0.39 = 3.9$ & \cellcolor{lightgray}$20 \times 0.5 \times 0.33 = 3.3$ & \cellcolor{lightblue}$20 \times 0.5 \times 0.28 = 2.8$ & \cellcolor{lightbrown}$180 \times 0.5 \times 0.39 = 35.1$ & \cellcolor{lightgray}$180 \times 0.5 \times 0.33 = 29.7$ & \cellcolor{lightblue}$180 \times 0.5 \times 0.28 = 25.2$ & \cellcolor{lightbrown}$100 \times 0.4 = 40$ & \cellcolor{lightgray}$100 \times 0.6 = 60$ \\
+% Day 2 & 200 & \cellcolor{lightbrown}$20 \times 0.5 \times 0.39 = 3.9$ & \cellcolor{lightgray}$20 \times 0.5 \times 0.33 = 3.3$ & \cellcolor{lightblue}$20 \times 0.5 \times 0.28 = 2.8$ & \cellcolor{lightbrown}$180 \times 0.5 \times 0.39 = 35.1$ & \cellcolor{lightgray}$180 \times 0.5 \times 0.33 = 29.7$ & \cellcolor{lightblue}$180 \times 0.5 \times 0.28 = 25.2$ & \cellcolor{lightbrown}$100 \times 0.4 = 40$ & \cellcolor{lightgray}$100 \times 0.6 = 60$ \\
+% Day 3 & 200 & \cellcolor{lightbrown}$20 \times 0.5 \times 0.39 = 3.9$ & \cellcolor{lightgray}$20 \times 0.5 \times 0.33 = 3.3$ & \cellcolor{lightblue}$20 \times 0.5 \times 0.28 = 2.8$ & \cellcolor{lightbrown}$180 \times 0.5 \times 0.39 = 35.1$ & \cellcolor{lightgray}$180 \times 0.5 \times 0.33 = 29.7$ & \cellcolor{lightblue}$180 \times 0.5 \times 0.28 = 25.2$ & \cellcolor{lightbrown}$100 \times 0.45 = 45$ & \cellcolor{lightgray}$100 \times 0.55 = 55$ \\
+% Day 4 & 200 & \cellcolor{lightbrown}$20 \times 0.5 \times 0.39 = 3.9$ & \cellcolor{lightgray}$20 \times 0.5 \times 0.33 = 3.3$ & \cellcolor{lightblue}$20 \times 0.5 \times 0.28 = 2.8$ & \cellcolor{lightbrown}$180 \times 0.5 \times 0.39 = 35.1$ & \cellcolor{lightgray}$180 \times 0.5 \times 0.33 = 29.7$ & \cellcolor{lightblue}$180 \times 0.5 \times 0.28 = 25.2$ & \cellcolor{lightbrown}$100 \times 0.45 = 45$ & \cellcolor{lightgray}$100 \times 0.55 = 55$ \\
+% Day 5 & 200 & \cellcolor{lightbrown}$20 \times 0.5 \times 0.39 = 3.9$ & \cellcolor{lightgray}$20 \times 0.5 \times 0.33 = 3.3$ & \cellcolor{lightblue}$20 \times 0.5 \times 0.28 = 2.8$ & \cellcolor{lightbrown}$180 \times 0.5 \times 0.39 = 35.1$ & \cellcolor{lightgray}$180 \times 0.5 \times 0.33 = 29.7$ & \cellcolor{lightblue}$180 \times 0.5 \times 0.28 = 25.2$ & \cellcolor{lightbrown}$100 \times 0.5 = 50$ & \cellcolor{lightgray}$100 \times 0.5 = 50$ \\
+% \bottomrule
+% \end{tabular}
+% }
+% \caption{Example: Reward distribution among the participants in one task over five days.}
+% \label{tab:rewards_distribution-table2}
+% \end{table*}
+
+
+% \begin{table*}[t]
+% \centering
+% \renewcommand\arraystretch{1.5}
+% \resizebox{2\columnwidth}{!}{%
+% \begin{tabular}{lcccccccccc}
+% \toprule
+% & \multirow{3}{*}{\textbf{Total}} 
+% & \multicolumn{4}{c}{\textbf{Training Nodes}} 
+% & \multirow{3}{*}{\textbf{Delegator A}} 
+% & \multicolumn{3}{c}{\textbf{Validators}} 
+% \\
+% \cmidrule(lr){3-6} \cmidrule(lr){8-10}
+% & 
+% & \multicolumn{2}{c}{\cellcolor{lightbrown}Node A} 
+% & \multicolumn{2}{c}{\cellcolor{lightgray}Node B}
+% & 
+% & \cellcolor{lightbrown}Val. A 
+% & \cellcolor{lightgray}Val. B 
+% & \cellcolor{lightblue}Val. C 
+% \\
+% \cmidrule(lr){3-4}\cmidrule(lr){5-6}
+% & 
+% & \cellcolor{lightbrown}\textbf{Reward A (10\%)} 
+% & \cellcolor{lightbrown}\textbf{Reward B (90\%)} 
+% & \cellcolor{lightgray}\textbf{Reward A (10\%)} 
+% & \cellcolor{lightgray}\textbf{Reward B (90\%)} 
+% & 
+% & \cellcolor{lightbrown}(\(\sigma=0.4\))
+% & \cellcolor{lightgray}(\(\sigma=0.4\))
+% & \cellcolor{lightblue}(\(\sigma=0.4\))
+% \\
+% \midrule
+% \textbf{Day 1} 
+% & 309,157.68 
+% & \cellcolor{lightbrown}4,937.1 
+% & \cellcolor{lightbrown}44,433.9 
+% & \cellcolor{lightgray}5,053.9 
+% & \cellcolor{lightgray}45,485.1
+% & 8,712.6
+% & \cellcolor{lightbrown}73,997 
+% & \cellcolor{lightgray}87,834 
+% & \cellcolor{lightblue}38,703 
+% \\
+
+% \textbf{Day 2} 
+% & 309,157.68 
+% & \cellcolor{lightbrown}4,937.1 
+% & \cellcolor{lightbrown}44,433.9 
+% & \cellcolor{lightgray}5,053.9 
+% & \cellcolor{lightgray}45,485.1
+% & 8,712.6
+% & \cellcolor{lightbrown}73,997 
+% & \cellcolor{lightgray}87,834 
+% & \cellcolor{lightblue}38,703 
+% \\
+
+% \textbf{Day 3} 
+% & 309,157.68 
+% & \cellcolor{lightbrown}4,937.1 
+% & \cellcolor{lightbrown}44,433.9 
+% & \cellcolor{lightgray}5,053.9 
+% & \cellcolor{lightgray}45,485.1
+% & 8,712.6
+% & \cellcolor{lightbrown}73,997 
+% & \cellcolor{lightgray}87,834 
+% & \cellcolor{lightblue}38,703 
+% \\
+
+% \textbf{Day 4} 
+% & 309,157.68 
+% & \cellcolor{lightbrown}4,937.1 
+% & \cellcolor{lightbrown}44,433.9 
+% & \cellcolor{lightgray}5,053.9 
+% & \cellcolor{lightgray}45,485.1
+% & 8,712.6
+% & \cellcolor{lightbrown}73,997 
+% & \cellcolor{lightgray}87,834 
+% & \cellcolor{lightblue}38,703 
+% \\
+
+% \textbf{Day 5} 
+% & 309,157.68 
+% & \cellcolor{lightbrown}4,937.1 
+% & \cellcolor{lightbrown}44,433.9 
+% & \cellcolor{lightgray}5,053.9 
+% & \cellcolor{lightgray}45,485.1
+% & 8,712.6
+% & \cellcolor{lightbrown}73,997 
+% & \cellcolor{lightgray}87,834 
+% & \cellcolor{lightblue}38,703 
+% \\
+% \bottomrule
+% \end{tabular}
+% }
+% \caption{Example: Updated reward distribution for one task (Days 1--5) with 2 training nodes (A,B), Delegator A, and 3 validators (A,B,C).}
+% \label{tab:rewards_distribution-table2}
+% \end{table*}
+
+% \begin{table*}[t]
+% \centering
+% \renewcommand\arraystretch{1.5}
+% \resizebox{2\columnwidth}{!}{%
+% \begin{tabular}{lcccccccccc}
+% \toprule
+% & \multirow{3}{*}{\textbf{Total}} 
+% & \multicolumn{4}{c}{\textbf{Training Nodes}} 
+% & \multirow{3}{*}{\cellcolor{lightblue}{\begin{tabular}{c}
+% \textbf{Delegator A}\\
+% $(\sigma=0.4)$
+% \end{tabular}}} 
+% & \multicolumn{3}{c}{\textbf{Validators}} 
+% \\
+% \cmidrule(lr){3-6} \cmidrule(lr){8-10}
+% & 
+% & \multicolumn{2}{c}{\cellcolor{lightbrown}Node A} 
+% & \multicolumn{2}{c}{\cellcolor{lightgray}Node B}
+% & 
+% & \cellcolor{lightbrown}Val. A 
+% & \cellcolor{lightgray}Val. B 
+% & \cellcolor{lightblue}Val. C 
+% \\
+% \cmidrule(lr){3-4}\cmidrule(lr){5-6}
+% & 
+% & \cellcolor{lightbrown}\textbf{Reward A (10\%)} 
+% & \cellcolor{lightbrown}\textbf{Reward B (90\%)} 
+% & \cellcolor{lightgray}\textbf{Reward A (10\%)} 
+% & \cellcolor{lightgray}\textbf{Reward B (90\%)} 
+% & 
+% & \cellcolor{lightbrown}
+% & \cellcolor{lightgray}
+% & \cellcolor{lightblue}
+% \\
+% \midrule
+% \textbf{Day 1} 
+% & 309,157.68 
+% & \cellcolor{lightbrown}4,937.1 
+% & \cellcolor{lightbrown}44,433.9 
+% & \cellcolor{lightgray}5,053.9 
+% & \cellcolor{lightgray}45,485.1
+% & 8,712.6
+% & \cellcolor{lightbrown}73,997 
+% & \cellcolor{lightgray}87,834 
+% & \cellcolor{lightblue}38,703 
+% \\
+
+% \textbf{Day 2} 
+% & 309,157.68 
+% & \cellcolor{lightbrown}4,937.1 
+% & \cellcolor{lightbrown}44,433.9 
+% & \cellcolor{lightgray}5,053.9 
+% & \cellcolor{lightgray}45,485.1
+% & 8,712.6
+% & \cellcolor{lightbrown}73,997 
+% & \cellcolor{lightgray}87,834 
+% & \cellcolor{lightblue}38,703 
+% \\
+
+% \textbf{Day 3} 
+% & 309,157.68 
+% & \cellcolor{lightbrown}4,937.1 
+% & \cellcolor{lightbrown}44,433.9 
+% & \cellcolor{lightgray}5,053.9 
+% & \cellcolor{lightgray}45,485.1
+% & 8,712.6
+% & \cellcolor{lightbrown}73,997 
+% & \cellcolor{lightgray}87,834 
+% & \cellcolor{lightblue}38,703 
+% \\
+
+% \textbf{Day 4} 
+% & 309,157.68 
+% & \cellcolor{lightbrown}4,937.1 
+% & \cellcolor{lightbrown}44,433.9 
+% & \cellcolor{lightgray}5,053.9 
+% & \cellcolor{lightgray}45,485.1
+% & 8,712.6
+% & \cellcolor{lightbrown}73,997 
+% & \cellcolor{lightgray}87,834 
+% & \cellcolor{lightblue}38,703 
+% \\
+
+% \textbf{Day 5} 
+% & 309,157.68 
+% & \cellcolor{lightbrown}4,937.1 
+% & \cellcolor{lightbrown}44,433.9 
+% & \cellcolor{lightgray}5,053.9 
+% & \cellcolor{lightgray}45,485.1
+% & 8,712.6
+% & \cellcolor{lightbrown}73,997 
+% & \cellcolor{lightgray}87,834 
+% & \cellcolor{lightblue}38,703 
+% \\
+% \bottomrule
+% \end{tabular}
+% }
+% \caption{Example: Updated reward distribution for one task (Days 1--5) with 2 training nodes (A,B), 
+% Delegator A (\(\sigma=0.4\)), and 3 validators (A,B,C). 
+% \(\delta=0.1\) for Reward A (10\%) vs. Reward B (90\%).}
+% \label{tab:rewards_distribution-table2}
+% \end{table*}
 
 \begin{table*}[t]
 \centering
